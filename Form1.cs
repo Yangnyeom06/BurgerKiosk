@@ -23,6 +23,7 @@ namespace BurgerKiosk
                 totalCost += 4000;
                 lstOrder.Items.Add("불고기버거 : 4,000원");
             }
+
             else if (rdoBurger3.Checked)
             {
                 totalCost += 3000;

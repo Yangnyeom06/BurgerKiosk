@@ -221,7 +221,7 @@
             // lstOrder
             // 
             lstOrder.FormattingEnabled = true;
-            lstOrder.Location = new Point(18, 39);
+            lstOrder.Location = new Point(17, 39);
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(209, 172);
             lstOrder.TabIndex = 0;
