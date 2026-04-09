@@ -3,12 +3,43 @@ namespace BurgerKiosk
     public partial class Form1 : Form
     {
         int totalCost = 0;
+
         public Form1()
         {
             InitializeComponent();
-            rdoBurger1.Checked = false;
-            rdoBurger2.Checked = false;
-            rdoBurger3.Checked = false;
+            this.Shown += (s, e) =>
+            {
+                rdoBurger1.Checked = false;
+                rdoBurger2.Checked = false;
+                rdoBurger3.Checked = false;
+            };
+
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Tab)
+            {
+                if (!rdoBurger1.Focused && !rdoBurger2.Focused && !rdoBurger3.Focused)
+                {
+                    rdoBurger1.Focus();
+                    return true;
+                }
+            }
+
+            if (keyData == Keys.Enter)
+            {
+                orderBtn.PerformClick();
+                return true;
+            }
+
+            if (keyData == Keys.Back)
+            {
+                initBtn.PerformClick();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void orderBtn_Click(object sender, EventArgs e)
@@ -81,6 +112,37 @@ namespace BurgerKiosk
             lstOrder.Items.Clear();
             totalCost = 0;
             lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+        }
+
+        private void rdoBurger1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                rdoBurger1.Checked = true;
+                rdoBurger2.Checked = false;
+                rdoBurger3.Checked = false;
+                
+            }
+        }
+
+        private void rdoBurger2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                rdoBurger1.Checked = false;
+                rdoBurger2.Checked = true;
+                rdoBurger3.Checked = false;
+            }
+        }
+
+        private void rdoBurger3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                rdoBurger1.Checked = false;
+                rdoBurger2.Checked = false;
+                rdoBurger3.Checked = true;
+            }
         }
     }
 }

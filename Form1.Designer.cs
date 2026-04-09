@@ -43,8 +43,8 @@
             chkOption1 = new CheckBox();
             groupBox3 = new GroupBox();
             lblTotalCost = new Label();
-            lstOrder = new ListBox();
             orderBtn = new Button();
+            lstOrder = new ListBox();
             initBtn = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)burgerPictureBox3).BeginInit();
@@ -66,14 +66,17 @@
             // 
             // rdoBurger1
             // 
+            rdoBurger1.AutoCheck = false;
             rdoBurger1.AutoSize = true;
             rdoBurger1.Font = new Font("맑은 고딕", 10F);
             rdoBurger1.Location = new Point(13, 59);
             rdoBurger1.Name = "rdoBurger1";
             rdoBurger1.Size = new Size(82, 27);
             rdoBurger1.TabIndex = 0;
+            rdoBurger1.TabStop = true;
             rdoBurger1.Text = "햄버거";
             rdoBurger1.UseVisualStyleBackColor = true;
+            rdoBurger1.KeyPress += rdoBurger1_KeyPress;
             // 
             // groupBox1
             // 
@@ -123,6 +126,7 @@
             // 
             // rdoBurger3
             // 
+            rdoBurger3.AutoCheck = false;
             rdoBurger3.AutoSize = true;
             rdoBurger3.Font = new Font("맑은 고딕", 10F);
             rdoBurger3.Location = new Point(13, 241);
@@ -131,9 +135,11 @@
             rdoBurger3.TabIndex = 2;
             rdoBurger3.Text = "치킨버거";
             rdoBurger3.UseVisualStyleBackColor = true;
+            rdoBurger3.KeyPress += rdoBurger3_KeyPress;
             // 
             // rdoBurger2
             // 
+            rdoBurger2.AutoCheck = false;
             rdoBurger2.AutoSize = true;
             rdoBurger2.Font = new Font("맑은 고딕", 10F);
             rdoBurger2.Location = new Point(13, 153);
@@ -142,6 +148,7 @@
             rdoBurger2.TabIndex = 1;
             rdoBurger2.Text = "불고기버거";
             rdoBurger2.UseVisualStyleBackColor = true;
+            rdoBurger2.KeyPress += rdoBurger2_KeyPress;
             // 
             // groupBox2
             // 
@@ -163,7 +170,7 @@
             chkOption4.Location = new Point(21, 175);
             chkOption4.Name = "chkOption4";
             chkOption4.Size = new Size(121, 32);
-            chkOption4.TabIndex = 3;
+            chkOption4.TabIndex = 4;
             chkOption4.TabStop = false;
             chkOption4.Text = "소스 추가";
             chkOption4.UseVisualStyleBackColor = true;
@@ -174,7 +181,7 @@
             chkOption3.Location = new Point(21, 132);
             chkOption3.Name = "chkOption3";
             chkOption3.Size = new Size(121, 32);
-            chkOption3.TabIndex = 2;
+            chkOption3.TabIndex = 3;
             chkOption3.TabStop = false;
             chkOption3.Text = "치즈 추가";
             chkOption3.UseVisualStyleBackColor = true;
@@ -185,7 +192,7 @@
             chkOption2.Location = new Point(21, 88);
             chkOption2.Name = "chkOption2";
             chkOption2.Size = new Size(74, 32);
-            chkOption2.TabIndex = 1;
+            chkOption2.TabIndex = 2;
             chkOption2.TabStop = false;
             chkOption2.Text = "콜라";
             chkOption2.UseVisualStyleBackColor = true;
@@ -196,19 +203,20 @@
             chkOption1.Location = new Point(21, 43);
             chkOption1.Name = "chkOption1";
             chkOption1.Size = new Size(114, 32);
-            chkOption1.TabIndex = 0;
-            chkOption1.TabStop = false;
+            chkOption1.TabIndex = 1;
             chkOption1.Text = "감자튀김";
             chkOption1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(initBtn);
             groupBox3.Controls.Add(lblTotalCost);
+            groupBox3.Controls.Add(orderBtn);
             groupBox3.Controls.Add(lstOrder);
             groupBox3.Font = new Font("맑은 고딕", 12F);
-            groupBox3.Location = new Point(526, 110);
+            groupBox3.Location = new Point(535, 100);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(244, 261);
+            groupBox3.Size = new Size(244, 338);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "주문 내역";
@@ -222,6 +230,18 @@
             lblTotalCost.Text = "총 금액 : 0원";
             lblTotalCost.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // orderBtn
+            // 
+            orderBtn.BackColor = Color.Green;
+            orderBtn.ForeColor = SystemColors.Control;
+            orderBtn.Location = new Point(6, 278);
+            orderBtn.Name = "orderBtn";
+            orderBtn.Size = new Size(113, 54);
+            orderBtn.TabIndex = 2;
+            orderBtn.Text = "주문하기";
+            orderBtn.UseVisualStyleBackColor = false;
+            orderBtn.Click += orderBtn_Click;
+            // 
             // lstOrder
             // 
             lstOrder.FormattingEnabled = true;
@@ -231,28 +251,14 @@
             lstOrder.TabIndex = 0;
             lstOrder.TabStop = false;
             // 
-            // orderBtn
-            // 
-            orderBtn.BackColor = Color.Green;
-            orderBtn.ForeColor = SystemColors.Control;
-            orderBtn.Location = new Point(526, 384);
-            orderBtn.Name = "orderBtn";
-            orderBtn.Size = new Size(113, 54);
-            orderBtn.TabIndex = 3;
-            orderBtn.TabStop = false;
-            orderBtn.Text = "주문하기";
-            orderBtn.UseVisualStyleBackColor = false;
-            orderBtn.Click += orderBtn_Click;
-            // 
             // initBtn
             // 
             initBtn.BackColor = Color.Red;
             initBtn.ForeColor = SystemColors.Control;
-            initBtn.Location = new Point(655, 384);
+            initBtn.Location = new Point(123, 278);
             initBtn.Name = "initBtn";
             initBtn.Size = new Size(115, 54);
-            initBtn.TabIndex = 7;
-            initBtn.TabStop = false;
+            initBtn.TabIndex = 3;
             initBtn.Text = "초기화";
             initBtn.UseVisualStyleBackColor = false;
             initBtn.Click += initBtn_Click;
@@ -262,8 +268,6 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(initBtn);
-            Controls.Add(orderBtn);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
