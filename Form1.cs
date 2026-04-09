@@ -57,44 +57,6 @@ namespace BurgerKiosk
                 lblTotalCost.Text = "메뉴를 선택하세요";
                 return;
             }
-
-            if (rdoBurger1.Checked)
-            {
-                totalCost += 5000;
-                lstOrder.Items.Add("햄버거 : 5,000원");
-            }
-            else if (rdoBurger2.Checked)
-            {
-                totalCost += 4000;
-                lstOrder.Items.Add("불고기버거 : 4,000원");
-            }
-
-            else if (rdoBurger3.Checked)
-            {
-                totalCost += 3000;
-                lstOrder.Items.Add("치킨버거 : 3,000원");
-            }
-
-            if (chkOption1.Checked)
-            {
-                totalCost += 3500;
-                lstOrder.Items.Add("감자튀김 : 3,500원");
-            }
-            if (chkOption2.Checked)
-            {
-                totalCost += 2500;
-                lstOrder.Items.Add("콜라 : 2,500원");
-            }
-            if (chkOption3.Checked)
-            {
-                totalCost += 1500;
-                lstOrder.Items.Add("치즈 추가 : 1,500원");
-            }
-            if (chkOption4.Checked)
-            {
-                totalCost += 500;
-                lstOrder.Items.Add("소스 추가 : 500원");
-            }
             lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
         }
 
@@ -121,7 +83,7 @@ namespace BurgerKiosk
                 rdoBurger1.Checked = true;
                 rdoBurger2.Checked = false;
                 rdoBurger3.Checked = false;
-                
+
             }
         }
 
@@ -142,6 +104,133 @@ namespace BurgerKiosk
                 rdoBurger1.Checked = false;
                 rdoBurger2.Checked = false;
                 rdoBurger3.Checked = true;
+            }
+        }
+
+        private void rdoBurger1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBurger1.Checked)
+            {
+                totalCost += 5000;
+                lstOrder.Items.Add("햄버거 : 5,000원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 5000;
+                lstOrder.Items.Remove("햄버거 : 5,000원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+
+        private void rdoBurger2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBurger2.Checked)
+            {
+                totalCost += 4000;
+                lstOrder.Items.Add("불고기버거 : 4,000원");
+    lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 4000;
+                lstOrder.Items.Remove("불고기버거 : 4,000원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+        private void rdoBurger3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBurger3.Checked)
+            {
+                totalCost += 3000;
+                lstOrder.Items.Add("치킨버거 : 3,000원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 3000;
+                lstOrder.Items.Remove("치킨버거 : 3,000원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+        private void chkOption1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOption1.Checked)
+            {
+                totalCost += 3500;
+                lstOrder.Items.Add("감자튀김 : 3,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 3500;
+                lstOrder.Items.Remove("감자튀김 : 3,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+        private void chkOption2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOption2.Checked)
+            {
+                totalCost += 2500;
+                lstOrder.Items.Add("콜라 : 2,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 2500;
+                lstOrder.Items.Remove("콜라 : 2,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+        private void chkOption3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOption3.Checked)
+            {
+                totalCost += 1500;
+                lstOrder.Items.Add("치즈 추가 : 1,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 1500;
+                lstOrder.Items.Remove("치즈 추가 : 1,500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+        }
+
+        private void chkOption4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOption4.Checked)
+            {
+                totalCost += 500;
+                lstOrder.Items.Add("소스 추가 : 500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
+            }
+            else
+            {
+                totalCost -= 500;
+                lstOrder.Items.Remove("소스 추가 : 500원");
+                lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
+
             }
         }
     }

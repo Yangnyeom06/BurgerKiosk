@@ -42,10 +42,10 @@
             chkOption2 = new CheckBox();
             chkOption1 = new CheckBox();
             groupBox3 = new GroupBox();
+            initBtn = new Button();
             lblTotalCost = new Label();
             orderBtn = new Button();
             lstOrder = new ListBox();
-            initBtn = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)burgerPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)burgerPictureBox2).BeginInit();
@@ -76,6 +76,7 @@
             rdoBurger1.TabStop = true;
             rdoBurger1.Text = "햄버거";
             rdoBurger1.UseVisualStyleBackColor = true;
+            rdoBurger1.CheckedChanged += rdoBurger1_CheckedChanged;
             rdoBurger1.KeyPress += rdoBurger1_KeyPress;
             // 
             // groupBox1
@@ -135,6 +136,7 @@
             rdoBurger3.TabIndex = 2;
             rdoBurger3.Text = "치킨버거";
             rdoBurger3.UseVisualStyleBackColor = true;
+            rdoBurger3.CheckedChanged += rdoBurger3_CheckedChanged;
             rdoBurger3.KeyPress += rdoBurger3_KeyPress;
             // 
             // rdoBurger2
@@ -148,6 +150,7 @@
             rdoBurger2.TabIndex = 1;
             rdoBurger2.Text = "불고기버거";
             rdoBurger2.UseVisualStyleBackColor = true;
+            rdoBurger2.CheckedChanged += rdoBurger2_CheckedChanged;
             rdoBurger2.KeyPress += rdoBurger2_KeyPress;
             // 
             // groupBox2
@@ -174,6 +177,7 @@
             chkOption4.TabStop = false;
             chkOption4.Text = "소스 추가";
             chkOption4.UseVisualStyleBackColor = true;
+            chkOption4.CheckedChanged += chkOption4_CheckedChanged;
             // 
             // chkOption3
             // 
@@ -185,6 +189,7 @@
             chkOption3.TabStop = false;
             chkOption3.Text = "치즈 추가";
             chkOption3.UseVisualStyleBackColor = true;
+            chkOption3.CheckedChanged += chkOption3_CheckedChanged;
             // 
             // chkOption2
             // 
@@ -196,6 +201,7 @@
             chkOption2.TabStop = false;
             chkOption2.Text = "콜라";
             chkOption2.UseVisualStyleBackColor = true;
+            chkOption2.CheckedChanged += chkOption2_CheckedChanged;
             // 
             // chkOption1
             // 
@@ -206,6 +212,7 @@
             chkOption1.TabIndex = 1;
             chkOption1.Text = "감자튀김";
             chkOption1.UseVisualStyleBackColor = true;
+            chkOption1.CheckedChanged += chkOption1_CheckedChanged;
             // 
             // groupBox3
             // 
@@ -220,6 +227,18 @@
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "주문 내역";
+            // 
+            // initBtn
+            // 
+            initBtn.BackColor = Color.Red;
+            initBtn.ForeColor = SystemColors.Control;
+            initBtn.Location = new Point(123, 278);
+            initBtn.Name = "initBtn";
+            initBtn.Size = new Size(115, 54);
+            initBtn.TabIndex = 3;
+            initBtn.Text = "초기화";
+            initBtn.UseVisualStyleBackColor = false;
+            initBtn.Click += initBtn_Click;
             // 
             // lblTotalCost
             // 
@@ -250,18 +269,6 @@
             lstOrder.Size = new Size(209, 172);
             lstOrder.TabIndex = 0;
             lstOrder.TabStop = false;
-            // 
-            // initBtn
-            // 
-            initBtn.BackColor = Color.Red;
-            initBtn.ForeColor = SystemColors.Control;
-            initBtn.Location = new Point(123, 278);
-            initBtn.Name = "initBtn";
-            initBtn.Size = new Size(115, 54);
-            initBtn.TabIndex = 3;
-            initBtn.Text = "초기화";
-            initBtn.UseVisualStyleBackColor = false;
-            initBtn.Click += initBtn_Click;
             // 
             // Form1
             // 
