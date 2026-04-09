@@ -13,6 +13,20 @@ namespace BurgerKiosk
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
+            if (
+                !rdoBurger1.Checked &&
+                !rdoBurger2.Checked &&
+                !rdoBurger3.Checked &&
+                !chkOption1.Checked &&
+                !chkOption2.Checked &&
+                !chkOption3.Checked &&
+                !chkOption4.Checked
+                )
+            {
+                lblTotalCost.Text = "메뉴를 선택하세요";
+                return;
+            }
+
             if (rdoBurger1.Checked)
             {
                 totalCost += 5000;
