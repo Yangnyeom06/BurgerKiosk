@@ -64,7 +64,7 @@ namespace BurgerKiosk
                 totalCost += 500;
                 lstOrder.Items.Add("소스 추가 : 500원");
             }
-            lblTotalCost.Text = ($"총 금액 : {totalCost}원");
+            lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
         }
 
         private void initBtn_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace BurgerKiosk
 
             lstOrder.Items.Clear();
             totalCost = 0;
-            lblTotalCost.Text = ($"총 금액 : {totalCost}원");
+            lblTotalCost.Text = ($"총 금액 : {totalCost:N0}원");
         }
     }
 }
