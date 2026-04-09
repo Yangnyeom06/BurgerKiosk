@@ -6,82 +6,66 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
-            burgerRadioButton1.Checked = false;
-            burgerRadioButton2.Checked = false;
-            burgerRadioButton3.Checked = false;
+            rdoBurger1.Checked = false;
+            rdoBurger2.Checked = false;
+            rdoBurger3.Checked = false;
         }
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
-            totalCostLbl.Text = ($"총 금액 : {totalCost}원");
-        }
-
-        private void burgerRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (burgerRadioButton1.Checked)
+            if (rdoBurger1.Checked)
             {
                 totalCost += 5000;
+                lstOrder.Items.Add("햄버거 : 5,000원");
             }
-            else
-            {
-                totalCost -= 5000;
-            }
-        }
-
-        private void burgerRadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (burgerRadioButton2.Checked)
+            else if (rdoBurger2.Checked)
             {
                 totalCost += 4000;
+                lstOrder.Items.Add("불고기버거 : 4,000원");
             }
-            else
-            {
-                totalCost -= 4000;
-            }
-        }
-
-        private void burgerRadioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (burgerRadioButton3.Checked)
+            else if (rdoBurger3.Checked)
             {
                 totalCost += 3000;
+                lstOrder.Items.Add("치킨버거 : 3,000원");
             }
-            else
-            {
-                totalCost -= 3000;
-            }
-        }
 
-        private void optionCheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (optionCheckBox1.Checked)
+            if (chkOption1.Checked)
             {
                 totalCost += 3500;
+                lstOrder.Items.Add("감자튀김 : 3,500원");
             }
-        }
-
-        private void optionCheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (optionCheckBox2.Checked)
+            if (chkOption2.Checked)
             {
                 totalCost += 2500;
+                lstOrder.Items.Add("콜라 : 2,500원");
             }
-        }
-
-        private void optionCheckBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (optionCheckBox3.Checked)
+            if (chkOption3.Checked)
             {
                 totalCost += 1500;
+                lstOrder.Items.Add("치즈 추가 : 1,500원");
             }
-        }
-
-        private void optionCheckBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (optionCheckBox4.Checked)
+            if (chkOption4.Checked)
             {
                 totalCost += 500;
+                lstOrder.Items.Add("소스 추가 : 500원");
             }
+            lblTotalCost.Text = ($"총 금액 : {totalCost}원");
+        }
+
+        private void initBtn_Click(object sender, EventArgs e)
+        {
+            rdoBurger1.Checked = false;
+            rdoBurger2.Checked = false;
+            rdoBurger3.Checked = false;
+
+            chkOption1.Checked = false;
+            chkOption2.Checked = false;
+            chkOption3.Checked = false;
+            chkOption4.Checked = false;
+
+            lstOrder.Items.Clear();
+            totalCost = 0;
+            lblTotalCost.Text = ($"총 금액 : {totalCost}원");
         }
     }
 }
